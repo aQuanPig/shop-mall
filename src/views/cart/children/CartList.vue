@@ -2,7 +2,7 @@
   <div class="cart_list">
     <scroll class="wrapper" ref="scroll">
       <ul>
-        <li v-for="item in $store.state.cartList">
+        <li v-for="item in $store.state.cartList" :key="item.iid">
           <div class="list_item">
             <div class="checkbox"><van-checkbox v-model="item.isCheck" checked-color="#e27e90" @click="checkoutClick"></van-checkbox></div>
             <div class="image">
@@ -23,7 +23,7 @@
     <div class="calcItem">
       <div class="checkbox"><van-checkbox v-model="allChecked" checked-color="#e27e90" @click="checkAllClick">全选</van-checkbox></div>
       <div class="calc">合计：<span>￥{{getAllPrice}}</span>元</div>
-      <button class="button">提交订单({{$store.getters.getCartLength}})</button>
+      <button class="button" @click="handleOrder">提交订单({{$store.getters.getCartLength}})</button>
     </div>
   </div>
 </template>
@@ -47,6 +47,9 @@
       }
     },
     methods:{
+      handleOrder(){
+        this.$toast('暂无此功能');
+      },
       checkoutClick(){
         let result = this.storeData.filter(item=>{
           return item.isCheck === true
