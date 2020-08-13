@@ -9,7 +9,7 @@ npm install
 ```
 npm run serve
 ```
-### 线上预览地址:[http://47.107.149.243/mogujie](http://47.107.149.243/mogujie)
+
 ### 喜欢的朋友可以给个Star哦~
 ### 喜欢的朋友可加老师VXin（coderwhy003）获取接口
 
